@@ -136,7 +136,7 @@ async def _fib(n: int):
     8
     """
 
-    await sleep(random())
+    await sleep(random()) # `random()` returns a PRN between 0.0 and 1.0
     if n == 0:
         return 0
     if n == 1:
