@@ -64,7 +64,7 @@ IMPLEMENTATION
     affect the accumulation of the total delay: execution time would
     significantly improve due to fewer delays).
     
-    Some type annotations are applied, but not very thoroughly.
+    Some type annotations are applied.
 
 
 EXAMPLES
