@@ -61,10 +61,10 @@ IMPLEMENTATION
     Per specification, only strictly positive integers are allowed as input.
 
     Also, the Fibonacci implementation is not memoized (memoization would i.a.
-    affect the accumulation of the total delay, although execution time would
-    certainly improve due to fewer recursive calls and thus delays).
+    affect the accumulation of the total delay: execution time would
+    significantly improve due to fewer delays).
     
-    Some type annotations are applied, not throughly though.
+    Some type annotations are applied, but not very thoroughly.
 
 
 EXAMPLES
