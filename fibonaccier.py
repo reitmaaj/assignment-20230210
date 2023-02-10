@@ -104,7 +104,8 @@ from asyncio import sleep
 from asyncio import gather
 from random import random
 from time import time_ns
-
+from typing import List
+from typing import Tuple
 
 # helpers
 
@@ -117,7 +118,7 @@ class UsageError(Exception):
 
 # main implementation
 
-async def _fib(n: int):
+async def _fib(n: int) -> int:
     """
     A recursive implementation of Fibonacci numbers (on large n, may exhaust
     call stack and will be slow to complete due to compounding random delays).
@@ -144,10 +145,13 @@ async def _fib(n: int):
     return await _fib(n - 1) + await _fib(n - 2)
 
 
-async def fib(n: int):
+async def fib(n: int) -> Tuple[int, int]:
     """
     A wrapper for the actual Fibonacci calculation (`_fib`). Returns the
     result and a high-precision timestamp of finishing time.
+
+    :param n:   the ordinal of the Fibonacci number to calculate
+    :return:    tuple n-th Fibonacci number, high-res timestamp of completion
 
     >>> from asyncio import run
     >>> nth_fib, timestamp = run(fib(6))
@@ -160,7 +164,7 @@ async def fib(n: int):
     return nth_fib, timestamp
 
 
-def resolve_input(*args):
+def resolve_input(*args) -> int:
     """
     Obtain the input parameter to the Fibonacci calculations.
     
@@ -186,8 +190,7 @@ def resolve_input(*args):
     raise UsageError(f'bad command line arguments: {" ".join(args)}')
 
 
-
-def resolve_output(n: int, results):
+def resolve_output(n: int, results: List[Tuple[int, int]]) -> str:
     """
     Obtain output for the command.
     
