@@ -149,7 +149,9 @@ async def fib(n: int):
     A wrapper for the actual Fibonacci calculation (`_fib`). Returns the
     result and a high-precision timestamp of finishing time.
     """
-    return await _fib(n), time_ns()
+    nth_fib = await _fib(n)
+    timestamp = time_ns()
+    return nth_fib, timestamp
 
 
 def resolve_input(*args):
