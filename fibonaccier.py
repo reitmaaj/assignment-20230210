@@ -1,6 +1,6 @@
 """
 NAME
-    fibonaccier.py
+    fibonaccier.py - redundant, concurrent Fibonacci number calculation
 
 
 SYNOPSIS
