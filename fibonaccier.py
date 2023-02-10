@@ -148,7 +148,13 @@ async def fib(n: int):
     """
     A wrapper for the actual Fibonacci calculation (`_fib`). Returns the
     result and a high-precision timestamp of finishing time.
+
+    >>> from asyncio import run
+    >>> nth_fib, timestamp = run(fib(6))
+    >>> assert nth_fib == 8
+    >>> assert type(timestamp) == int
     """
+
     nth_fib = await _fib(n)
     timestamp = time_ns()
     return nth_fib, timestamp
