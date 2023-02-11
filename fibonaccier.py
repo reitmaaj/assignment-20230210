@@ -71,9 +71,9 @@ IMPLEMENTATION
 
     Per specification, only strictly positive integers are allowed as input.
 
-    Also, the Fibonacci implementation is not memoized (memoization would i.a.
-    affect the accumulation of the total delay: execution time would
-    significantly improve due to fewer delays).
+    Also, the Fibonacci implementation could be memoized, but isn't.
+    Memoization would affect the accumulation of the total delay, reducing
+    execution time significantly.
     
     Some type annotations are applied.
 
