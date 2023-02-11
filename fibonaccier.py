@@ -55,7 +55,7 @@ IMPLEMENTATION
 
     The main logic is contained in functions `fib` and `_fib`, where `fib` is
     a wrapper function for calling the the recursive Fibonacci calculation
-    and timing the completion of the calculations. `_fib` is a naive recursive
+    and timing the completion of the call. `_fib` is a naive recursive
     implementation of calculating Fibonacci numbers, and also contains the
     specification-mandated random delay.
 
