@@ -53,10 +53,21 @@ IMPLEMENTATION
         //   3. Add the random delay into the function.
         //   4. Implement the 2 concurrent async calls to this function
 
-    The specification for this assignment was interpreted to imply that the
-    random delay applies to each recursive call in the Fibonacci calculation,
-    not just once. (In the latter case, calling `asyncio.sleep` should be moved
-    to the wrapping function.)
+    The main logic is contained in functions `fib` and `_fib`, where `fib` is
+    a wrapper function for calling the the recursive Fibonacci calculation
+    and timing the completion of the calculations. `_fib` is a naive recursive
+    implementation of calculating Fibonacci numbers, and also contains the
+    specification-mandated random delay.
+
+    `resolve_input` and `resolve_output` functions handle input and output,
+    respectively. Input is read either from command line arguments or standard
+    input, depending on number of command line arguments passed. Output is
+    adjusted to reflect which of the Fibonacci calculations finished first.
+
+    Note that the specification for this assignment was interpreted to imply
+    that the random delay applies to each recursive call in the Fibonacci
+    calculation, not just once. (In the latter case, calling `asyncio.sleep`
+    should be moved to the wrapper `fib` function.)
 
     Per specification, only strictly positive integers are allowed as input.
 
