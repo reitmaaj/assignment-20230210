@@ -201,7 +201,7 @@ def resolve_input(*args) -> int:
     raise UsageError(f'bad command line arguments: {" ".join(args)}')
 
 
-def resolve_output(n: int, results: List[Tuple[int, int]]) -> str:
+def resolve_output(n: int, results: Tuple[Tuple[int, int], Tuple[int, int]]) -> str:
     """
     Obtain output for the command.
     
